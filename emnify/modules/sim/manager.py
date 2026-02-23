@@ -99,7 +99,7 @@ class SimManager:
         """
         return SimUpdateApi().call_api(
             client=self.client,
-            data=sim.dict(exclude_none=True),
+            data=sim.model_dump(exclude_none=True),
             path_params={"sim": sim_id},
         )
 
@@ -139,7 +139,7 @@ class SimManager:
     ) -> dict:
         query_filter = {}
         if filter_model:
-            filter_dict = filter_model.dict(exclude_none=True)
+            filter_dict = filter_model.model_dump(exclude_none=True)
             query_filter["q"] = ",".join(
                 [f"{key}:{filter_dict[key]}" for key in filter_dict]
             )
