@@ -23,6 +23,10 @@ class DeviceManager:
         return device_models.Device
 
     @property
+    def get_sim_device_model(self):
+        return device_models.SimDevice
+
+    @property
     def list_sms_model(self):
         return device_models.ListSms
 

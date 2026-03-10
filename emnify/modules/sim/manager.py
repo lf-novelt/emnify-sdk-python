@@ -34,6 +34,10 @@ class SimManager:
         return sim_models.SimFilter
 
     @property
+    def get_sim_status_model(self):
+        return sim_models.SimStatus
+
+    @property
     def get_sim_sort_enum(self):
         return emnify_const.SimSort
 
